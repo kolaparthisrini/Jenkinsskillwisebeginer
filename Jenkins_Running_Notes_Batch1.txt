@@ -1,0 +1,122 @@
+Day1
+======================================================
+>https://github.com/kolaparthisrini/Jenkinsskillwisebeginer---materials
+>https://git-scm.com/download/win
+>https://hub.docker.com/--acoount creation
+>https://get.jenkins.io/war-stable/2.263.2/
+https://notepad-plus-plus.org/downloads/
+https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home
+https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.msi
+>>>>>>>>>>>>>>>>
+jenkins is opensource.
+
+Jenkins Installation steps:
+Jenkins can be installed in multiple ways:Below are some of the ways
+1)Using jenkins installer-----------------------Use this only for training or for R&D.https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable/
+2)Install jenkins on docker------------------USed mainly for production environments where containerization matters
+we need to install docker first and on the top of that,we need to install jenkins.
+3)As a war file ie jenkins.war-------traditional approach.used for training purpose and research.not recommended fordevelopment.
+java -jar jenkins.war --httpPort=8181
+
+
+4)jenkins war deployment on tomcat/weblogic/jboss/pramathi/glashfish server--used in development
+5)On top of cloud ie AWS/Azure/GCP.....etc
+6)cloudbees which an alternate option for jenkins can be used.https://www.cloudbees.com/--costly
+
+docker run -p 8080:8080 -p 50000:50000 jenkins
+================================================================
+Day2
+https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.msi
+Add description
+jnkins was writen in java.
+>jenkins is CI/CD server.Jenkins is previously called as Hudson server.2011
+>Jenkins is totally writen in Java language.Some people call jenkins as Build server.
+Alternativies to jenkins : cloud bees,Teamcity(microsoft),bamboos...etc
+https://www.atlassian.com/software/bamboo
+
+CI standnts for continous Integration.
+CD stands for Continous Delivery.
+>In olden days ie before jenkins or CI,evry day we might build the app only 1 time or max of 2.Nonw because of agile and scrum,on a daily basis whenever we are done withe code changes we shld be able to build the app,test the app and deploy the app avoiding long queues and long waiting time.
+But now we can set auto approvals for the builds avoiding manual approvals.
+>Jenkins follows MAster-slave architecture.
+one machine/node will act as master/leader and others will work as Slave or childern.
+>Using the above approach jenkins allows us to run multiple builds ata time,by reducing waiting time.
+Team leader-master and team members-slaves---Ravi--13 years,raju-1 year,Vinoth-8 years,Sri
+ni-Leader--14 years
+
+If more no of builds are needed,then we will go with "MASTER-SLAVE" architecture.
+>In master slave architectures,we will run election algorithm to identify leader and slaves.
+>In realtime,we will use APACHE zookeeper server.
+https://zookeeper.apache.org/
+>A slave is a machine with jenkins software or agent.Some people call slave as node or terminal or machine.
+>To work on master slave,we shld have a cluster.
+>A cluster is a group of machines/nodes/servers/terminals.
+>By defaault we will never have a cluster.Only machine will act as master.
+
+>jenkins is making life easier by automation.
+Example: running a specific task at 2:30am IST on evry day except on Sunday.Once build is success,an email shld be triggered to tarshana and her managr as well.or Once build is failed,an email shld be triggered to tarshana and her managr as well and an Jira/servicenow ticket shld be created.
+>Jenkins power is mainly on plugins.Without plugin there is no jenkins.Plugin is like heart for a human body.
+> By default jenkins can process 2 requests at a time.We can increase the jenkins capacity.
+>
+
+
+Developer writes the code in Eclipse/VScode------>Push the code to Git---->Git to github---->Sonarqube code quality testing----->Building the app------->test report generation---->if build success deploy to app server.
+
+pre-build and post-build
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
