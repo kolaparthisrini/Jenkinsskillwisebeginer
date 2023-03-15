@@ -1,0 +1,66 @@
+>https://github.com/kolaparthisrini/Jenkinsskillwisebeginer---materials
+>https://git-scm.com/download/win
+>https://hub.docker.com/--acoount creation
+>https://get.jenkins.io/war-stable/2.263.2/
+https://notepad-plus-plus.org/downloads/
+https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home
+
+>>Goal:
+Trainee shld be able to configure and start jenkins.
+shld know hw to run the jobs and run pipelines
+Autodeployments and staging introduction
+troubleshooting and logging
+------------------------------------
+Dont use spaces  while naming a folder.Example: Jenkins docs,make is as "Jenkins_docs"
+Step1: create a folder in  C:\  drive with the name "Jenkins".
+>Jenkins is opensource.Jenkins power is mainly on its plugins.If we remove jenkins plugins then jenkins is useless.
+Like playstore or app store for mobile,even in jenkins we do have https://plugins.jenkins.io/.
+>Jenkins is one of the main tool in recent Devlopment methodologies.ie in Agile or scrum.
+>Jenkins can be installed using below ways.
+1)Using jenkins installer--not recommended for development,for training it is ok.
+https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable
+2)using jenkins.war file--not recommended
+3)jenkins.war deployment into tomcat/weblogic/jbos/glasfish servers....etc-recommnded
+4)jenkins on AWS/Azure/GCp--recommended based on ur project budget
+5)Jenkins can be installed on dockers or VM----highly recommended
+https://labs.play-with-docker.com/
+if you were not satisfied with services provided by jenkins,then u can use "CLOUDBEES".
+--- 
+Reason why plugins are failing?
+1)might be we are using old jenkgins.war file.
+2)Might be we are working jenkins in intranet.Due to firewall restrictions plugins are not getting installed on
+your jenkins node.
+3)Repository might having improper ssl certificate.
+
+==================================
+Day 2
+-----
+https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.msi
+>>>>>>>>>>>>>>For higher version,use jdk 1.11 or < 1.17
+
+-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
