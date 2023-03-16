@@ -59,10 +59,250 @@ Example: running a specific task at 2:30am IST on evry day except on Sunday.Once
 > By default jenkins can process 2 requests at a time.We can increase the jenkins capacity.
 >
 
-
+https://get.jenkins.io/war-stable/2.387.1/jenkins.war
 Developer writes the code in Eclipse/VScode------>Push the code to Git---->Git to github---->Sonarqube code quality testing----->Building the app------->test report generation---->if build success deploy to app server.
 
 pre-build and post-build
+
+Day3: 
+====================================
+>By default we can run only 2 jobs at a time.
+Global tool configuration: we can configure jdk,maven,ant,any others s/w path
+manage Plugins: we use this option to update/install/delete plugins from jenkins
+
+To uninstall a plugin from jenkins: Manage jenkins>Plugin Manager>Installed Plugins>Click "*" symbol.
+
+
+When we work for client project,we will have a separate network with firewall protection.Securty plays a major role
+while installing plugins,all plugins cannot be installed?Hw to handle this?
+ans)
+Get credentials of ur proxy server from IT team. and update the same under :
+Manage jenkins>Plugin Manager>Advanced Settings. and then click "Submit".
+
+One of the drawback of jenkins in security is "We cannot create roles and permissions directly".Bu we can overcome the same using "RoleBased access" pluginwd.
+
+I want to create a user with name "srini" as username and "srini" as pwd
+Admin: kolaparthi srinivas--username:admintime,
+User: srini,username: srini
+>We shld not have more than 1 admin.
+>in realtime,we will integrate LDAP server with Jenkins or we will integrate Kerberos or OKta/Oauth/SAML authentication with jenkins.
+>How can i monitor jenkins?
+Using "Melody" Plugin we can monitor jenkins.
+>https://github.com/srinivaskolaparthi/Certifications
+
+Deploy to server  container:
+=================================
+>>war/ear are the allowed formats for web conatiner
+>>for JAr JVM is enough.
+Once coding and testing is completed,we ned to pack/bundle the entire code into one of the below formats.
+war/ear/jar
+war----web archieve
+ear----enterprise archieve
+jar---- java archieve
+.java,
+.war----for web app,  Techno:php,django,flask,jsp,servlets,Springboot...etc
+.jar----for desktop apps:Any app which u install on ur machine is called as desktop app or application software
+tech:Java Swing,AWT,GWT,Spring
+.ear----for enteprise apps Example:ejb or spring,Structs,corba. 
+
+Task: create  a web app,build it,test it and deploy the same into web server like tomcat/weblogic/jboss/Oracle servers/Pramathi/nginx.
+we need to install "deploy to container" plugin.
+
+<properties>
+        <maven.compiler.release>17</maven.compiler.release>
+</properties>
+==========================
+Pipeline creation
+staging
+Script introduction to pipeline
+Articraft archieving
+===============================
+Day4
+
+java -Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true -jar jenkins.war --httpPort=9000
+
+Master slave architecture slave and master shld be on same cluster.
+project name: comcast
+
+UAT(user acceptance server) server
+Preproduction server
+Production server
+
+Developer writing the code-------commit-->git-push to -->github--->sonarqube--->Jenkins will pull data from branch ---->Post build filter---->report generation--->Tomcat(deployed to server)
+
+java -jar agent.jar -jnlpUrl http://localhost:9000/manage/computer/Slave2/jenkins-agent.jnlp -secret 335513a26943965fecf350feabc644f83f1267388e6c5a8fbd7c64da44a82713 -workDir "D:\Slave2"
+
+If master wants to communicate with slaves,then we need to use agents.
+
+In reality to enable slaves and jobs,we need to use Groovy language.
+>>Archive Build Artifacts:
+==========================
+When we build any maven project ,the final output will be either a jar file or war file.These files are located in target folder.
+If i run 5 times the project,then how many war files will be created?\
+ans)5 if there is code change and version change in each build.
+1 if there is no code change.
+
+i want to archive my old builds output.?How can i perform?
+
+Build1-----abc.0.1.warfile
+Build2-----abc.0.1.1.warfile  we need to archieve---tarsana
+Build3-----abc.0.2.0.war===vinoth
+>>Archive feature os by default available in ur jenkins
+====================================================================
+Pipeline:
+---------
+What ever operations that we had done till now are these done via coding or thru GUI?
+Ans)GUI
+
+If i add automation to this?
+I will create a groovy file with the operations.ld be installed
+in groovy,we are going to specify,on which agent we want to run the jobs,which job shld created,which plugins shld be installed.....etc.
+
+groovy follows DSL syntax.JenkinsFile[instructions].put this file in github/bitbucket/gitlab and give that github link.This jenkins file concept is called as "Pipeline as a code".
+
+==================
+Wheneever we want to push code to production server,before that we shld do proper testing.
+
+Eclipse--->git--->github--->Sonarqube(code quality testing)--->Jenkins---->UAT server--->Staging server--->pre-production server----->Production servers
+
+A pipeline is a group of steps or stages or modules.Pipelpine creation can be done in 2 ways.
+1)declarative approach---latest
+
+will start with :
+pipeline {
+
+} What ever we write inside stage is userdefined.Stage and stages are keywords which are predefined.
+2)scripting approach---older
+
+DSL language
+---->UAT(testing)--->Pre-production server---->production
+
+I will create delivery ,which shld run uat first and then pre and production.---we are not going to write any groovy.We will use delivery pipeline plugin.
+
+Using steps we are going to perform tasks
+https://www.jenkins.io/doc/book/pipeline/running-pipelines/
+whene we want to run multiple builds or stages parallely,then we need use the keyword "parallel".
+
+when we want to write pipeline in a separate file,then that code shld be places in JenkinsFile.This concept is c alled pipeline as a code and that file shld be placed in git or github repository.
+
+https://github.com/kolaparthisrini/JenkinsPipelines
+
+I want ro run my pipeline codeable which is available in my git from jenkins.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

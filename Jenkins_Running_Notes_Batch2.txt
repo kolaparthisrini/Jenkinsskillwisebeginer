@@ -38,7 +38,194 @@ Day 2
 https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.msi
 >>>>>>>>>>>>>>For higher version,use jdk 1.11 or < 1.17
 
--Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true
+java -Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true -jar jenkins.war --httpPort=9000
+
+<properties>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+========================================================================
+Day 3
+------------
+System configuration
+Jenkins CLI: USe jenkins cli to create/delete/run/modify jobs,builds from cli.This cli is mainly used by jenkins Administrator.
+Dashboard>Manage Jenkins>Jenkins CLI
+>We can use "Java Melody" plugin to monitor master and slaves jenkin nodes.
+
+ <role rolename="admin-gui,manager-gui,manager-script,manager-jmx,manager-status,admin-gui"/>
+  <user username="admin" password="admin" roles="admin-gui,manager-gui,manager-script"/>
+  
+Deploy to conatiner:
+  If we want to deploy any java app to tomcat web server,then the app shld be in below format.
+  war,ear and jar
+  War--web archive.USed for web apps.Example:Servlets,Springboot and spring mVC and jsps
+  ear- Enterprise archive.USed for enterprise app like banking and insurance apps.Technology:EJB,Structs,Spring...etc
+  Jar---Java archive.Used for desktop app or application s/w designed using Java Swing and AWT.
+  
+Goal: We need to deplay a Simple SpingMVC web app to Tomcat via Jenkins.
+Prereq:Tomct
+Code:
+
+Assume i am working for 3 modules is Comcast.
+1st--Finace Fund transfer
+2nd---Reports
+3---Email notificationl
+
+Views are helpful when we have multiple jobs.for easy viewing and maintainance we can use viewws.
+nousl
+I want to build my code continously for every 10 or 15 mins with out manual involvement.
+
+
+Pool SCM and Build Periodically.In reality we will use "QUARTZ" scheduler instead of Pool scm and Build periodically. H/5 * * * *.We can also use "Cron Schedulers"
+>>Quartz is commercial.We need to purchase the plugin from Quartz
+==============
+>By default whene we are working in a project we will have firewall and proxy rules and regulations.And we dont have full access to internet.
+>
+To get access to internet,we need to provide proxy details like ipaddress,username and password.
+
+To provide proxy details, Jenkins>Dashboard>Manage Jenkins>Manage Plugins>Advanced Settings
+>>>
+
+Master node is also called as Leader
+
+Child node is called as Slave/follower.In enterprize projects,we shld have more than 2 jenkin servers.
+How slaves communicate with jenkins master?It uses agents.
+
+On which basis zookeeper identifies Leader?
+ans)Zookeeper internally runs election algorithm and finds nearest leader.
+A slave can be in cloud also.
+
+1 slave in AWS,1 in GCP,1 in onpremises,but rules all shld be in same cluster.
+
+https://zookeeper.apache.org/
+==================================================
+Day 4:
+-----------------
+Implement Master-slave architectur for ur jenkins.on.By default TCP port will be disabled in jenkins.
+We need to enable the port.TCP and SSH
+MAster and slave will use TCP protocol for communication
+
+http://localhost:9000/env-vars.html/
+Artifact archieving: Wen we build any maven project,then if build is success jenkins will create a folder ing with
+the name "target".It is going to place the war file and its supported files under target folder.
+
+Assume i am builng new build.ding my job for the 67th time,67 war files ,but in maven it wont persist old war files.simply it will delete the old war file while executing.
+Artifact means files that are necessary to run ur app.
+Pipeline as a code and its types/Groovy introduction
+>>Pipeline creation thru plugin:
+
+Pipeline: A pipeline is  sequence of jobs/stages or events that are used to achive a specific task. 
+
+Till now we had controlled or configured everything thru mouse as it is GUI.
+
+What ever i had done till now,i want the same thru automation.To perform the same using automation,we needto 
+use Groovy DSL lang.
+
+Using groovy,we are going to write pipelines.
+
+Writing code  in pipeline is also called as "Pipeline as a code" concept.
+Pipeline code can be written in 2 ways.
+1)declarative approach---new approach--this is very easy to understand and debug.Useful for writing comploicated pipelines.
+2)scripting approach---old approach
+
+Always pipeline code will start with "pipeline"
+
+pipeline {
+
+//scripts
+}
+
+agent any{
+}
+
+stages is combinatiomn of multiple stages.Every stage has a step to perform.In our language step means task that we want to perform.
+stages{
+
+stage{
+step{
+ }
+stage{ 
+}
+}
+
+pipeline----agent----stages---stage--step
+>>>>>>>>>>>>>>
+Eclipse---->git----->github/bitbucket/gitlab---->UAT server---->Pre-production server----->production server
+
+1approach:create a pipeline using plugins
+we need to install Delivery pipeline plugin.
+
+UAT Job>preprodJob>productionJ
+>Till now we placed our pipeline code directly in jenkins which is not recommended approach.Always we suggest people to create a "Jenkinsfile" and write the code.here.after writing the code ,place it in github/bitbucket/gitlab/s3 bucket.
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
